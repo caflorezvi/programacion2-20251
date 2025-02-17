@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+/**
+ * Clase para probar el método invertirArreglo de la clase Ejercicio3
+ */
 public class Ejercicio3Test {
 
     @Test

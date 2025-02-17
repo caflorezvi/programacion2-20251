@@ -1,5 +1,8 @@
 package ejercicio3;
 
+/**
+ * Programa que invierte un arreglo de enteros.
+ */
 public class Ejercicio3 {
 
     public void invertirArreglo(int[] arreglo){

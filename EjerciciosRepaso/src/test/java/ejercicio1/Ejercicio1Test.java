@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Clase que contiene diferentes casos de prueba para el ejercicio 1.
+ */
 public class Ejercicio1Test {
 
     @Test

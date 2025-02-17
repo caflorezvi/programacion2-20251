@@ -9,6 +9,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Clase que contiene diferentes casos de prueba para el ejercicio 2.
+ */
 public class Ejercicio2Test {
 
     @Test
