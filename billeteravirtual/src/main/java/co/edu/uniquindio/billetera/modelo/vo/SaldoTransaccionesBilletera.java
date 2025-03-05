@@ -1,24 +1,17 @@
 package co.edu.uniquindio.billetera.modelo.vo;
 
 import co.edu.uniquindio.billetera.modelo.entidades.Transaccion;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.List;
 
+@AllArgsConstructor
+@Getter
 public class SaldoTransaccionesBilletera {
 
     private float saldo;
-    private ArrayList<Transaccion> transacciones;
+    private List<Transaccion> transacciones;
 
-    public SaldoTransaccionesBilletera(float saldo, ArrayList<Transaccion> transacciones) {
-        this.saldo = saldo;
-        this.transacciones = transacciones;
-    }
-
-    public float getSaldo() {
-        return saldo;
-    }
-
-    public ArrayList<Transaccion> getTransacciones() {
-        return transacciones;
-    }
 }
