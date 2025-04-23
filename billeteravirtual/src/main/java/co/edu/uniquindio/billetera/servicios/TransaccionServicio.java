@@ -9,6 +9,7 @@ import co.edu.uniquindio.billetera.repositorios.TransaccionRepositorio;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class TransaccionServicio {
 
@@ -41,11 +42,39 @@ public class TransaccionServicio {
     }
 
     public List<Transaccion> obtenerTransaccionesPeriodo(String numeroBilletera, LocalDateTime inicio, LocalDateTime fin){
-        return transaccionRepositorio.obtenerPorPeriodo(numeroBilletera, inicio, fin);
+
+        List<Transaccion> transacciones = transaccionRepositorio.obtenerPorBilletera(numeroBilletera);
+
+        return transacciones.stream()
+                .filter(t -> t.getFecha().isAfter(inicio) && t.getFecha().isBefore(fin))
+                .collect(Collectors.toList());
     }
 
     public PorcentajeGastosIngresos obtenerPorcentajeGastosIngresos(String numeroBilletera, int mes, int anio){
-        return transaccionRepositorio.obtenerPorcentajeGastosIngresos(numeroBilletera, mes, anio);
+
+        List<Transaccion> transacciones = transaccionRepositorio.obtenerPorBilletera(numeroBilletera);
+        float ingresos = 0;
+        float egresos = 0; //gastos
+
+        for (Transaccion transaccion : transacciones){
+            if(transaccion.getFecha().getMonthValue() == mes && transaccion.getFecha().getYear() == anio){
+                if(transaccion.getBilleteraOrigen().getNumero().equals(numeroBilletera)) {
+                    egresos += transaccion.getMonto() + transaccion.getComision();
+                }else{
+                    ingresos += transaccion.getMonto();
+                }
+            }
+        }
+
+        float total = ingresos + egresos;
+        float porcentajeGastos = (egresos / total) * 100;
+        float porcentajeIngresos = (ingresos / total) * 100;
+
+        return new PorcentajeGastosIngresos(
+                porcentajeGastos,
+                porcentajeIngresos
+        );
+
     }
 
 }
