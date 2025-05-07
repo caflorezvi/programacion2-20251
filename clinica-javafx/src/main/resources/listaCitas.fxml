@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.clinica.controladores.ListaCitasControlador"
+      spacing="20.0">
+
+    <HBox >
+        <Label text="Lista de citas" >
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Cancelar cita" prefWidth="160.0" onAction="#cancelarCita" />
+    </HBox>
+
+    <TableView fx:id="tablaCitas"  VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colPaciente" text="Paciente" />
+            <TableColumn fx:id="colFecha" text="Fecha" />
+            <TableColumn fx:id="colServicio" text="Servicio" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+
+</VBox>

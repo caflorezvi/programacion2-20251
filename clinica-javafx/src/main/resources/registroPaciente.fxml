@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="30.0"
+      alignment="CENTER"
+      fx:controller="co.edu.uniquindio.clinica.controladores.RegistroPacienteControlador" >
+
+    <Label text="Registro de Paciente" textFill="#0f0f0f">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+
+    <GridPane vgap="20.0" hgap="20.0" alignment="CENTER">
+
+        <Label text="Identificación:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtIdentificacion" prefWidth="250.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtNombre" prefWidth="250.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtTelefono" prefWidth="250.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Correo:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="txtCorreo" prefWidth="250.0" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Suscripcion:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <ComboBox fx:id="cbSuscripcion" prefWidth="250.0" prefHeight="30.0"  GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    </GridPane>
+
+    <Button text="Registrar" prefWidth="160.0" prefHeight="40.0" onAction="#registrarPaciente"/>
+
+</VBox>

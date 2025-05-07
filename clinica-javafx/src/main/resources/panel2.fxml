@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="30.0"
+      style="-fx-padding: 30px"
+      fx:controller="co.edu.uniquindio.clinica.controladores.PanelControlador2" >
+
+    <HBox alignment="CENTER" spacing="10.0">
+        <ImageView fitWidth="50.0" preserveRatio="true">
+            <Image url="@img/clinica.png"/>
+        </ImageView>
+        <Label text="Panel de la clínica" >
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+    </HBox>
+
+    <TabPane VBox.vgrow="ALWAYS"  >
+        <tabs>
+            <Tab text="Crear paciente" fx:id="tab1" closable="false" />
+            <Tab text="Listar pacientes" fx:id="tab2" closable="false" />
+            <Tab text="Crear cita" fx:id="tab3" closable="false" />
+            <Tab text="Listar citas" fx:id="tab4" closable="false" />
+        </tabs>
+    </TabPane>
+
+</VBox>
